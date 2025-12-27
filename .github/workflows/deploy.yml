@@ -25,7 +25,7 @@ jobs:
             echo "Successfully connected to AWS!"
             cd /home/ubuntu/my-site
             git pull origin main
-            sudo docker build -t jun-web:lastest .
+            sudo docker build -t jun-web:latest .
             sudo docker stop jun-web-container || true
             sudo docker rm jun-web-container || true
             sudo docker run -d --name jun-web-container -p 8081:80 jun-web:latest
