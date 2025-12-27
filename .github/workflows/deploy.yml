@@ -22,6 +22,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           port: 22
           script: |
+            echo "Successfully connected to AWS!"
             sudo docker stop jun-web-container || true
             sudo docker rm jun-web-container || true
             sudo docker run -d --name jun-web-container -p 8081:80 jun-web:latest
